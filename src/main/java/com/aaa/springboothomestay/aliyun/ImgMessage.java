@@ -35,7 +35,7 @@ public class ImgMessage {
     }
 
     public void a(){
-        System.out.println(1);
+        System.out.println("xinle");
     }
 
 
