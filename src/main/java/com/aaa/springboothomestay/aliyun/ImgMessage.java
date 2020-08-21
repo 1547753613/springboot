@@ -30,5 +30,13 @@ public class ImgMessage {
         this.data = data;
     }
 
+    public String getSatus() {
+        return status;
+    }
+
+    public void a(){
+        System.out.println(1);
+    }
+
 
 }
