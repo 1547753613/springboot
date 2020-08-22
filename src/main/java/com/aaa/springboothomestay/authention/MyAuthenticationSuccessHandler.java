@@ -27,10 +27,9 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         httpServletResponse.setContentType("application/json;charset=utf-8");
-        Admins admins=new Admins();
+        Admins admins= (Admins) authentication.getPrincipal();
         Map<String,Object>map=new HashMap<>();
         map.put("meg","登陆成功");
-
         map.put("admin",admins);
         PrintWriter out = httpServletResponse.getWriter();
         Result result = ResultUtil.success(ResultCode.SUCCESS, map);

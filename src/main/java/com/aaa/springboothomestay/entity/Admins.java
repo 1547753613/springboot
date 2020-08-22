@@ -41,7 +41,7 @@ public class Admins implements UserDetails {
     private Integer isCreExpirEd;//	int	是否认证过期
     private Integer isenble;//	int 	是否禁用
 
-    private Role role;//获取角色
+    private Role role=new Role();//获取角色
 
     private List<Menu> menus=new ArrayList<>();
 
@@ -49,7 +49,8 @@ public class Admins implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return AuthorityUtils.commaSeparatedStringToAuthorityList(this.role.getRole());
+
+        return AuthorityUtils.commaSeparatedStringToAuthorityList(this.getRole().getRole());
     }
 
     @Override
@@ -64,21 +65,21 @@ public class Admins implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return this.isexpired==1;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return this.islocked==1;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return this.isCreExpirEd==1;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return this.isenble==1;
+        return true;
     }
 }

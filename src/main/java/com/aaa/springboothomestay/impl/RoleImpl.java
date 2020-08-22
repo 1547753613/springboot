@@ -21,6 +21,8 @@ public class RoleImpl implements RoleService {
      */
     @Override
     public Role SelectRoleId(Integer rid) {
+
+
         return roleDao.selectByPrimaryKey(rid);
     }
 }

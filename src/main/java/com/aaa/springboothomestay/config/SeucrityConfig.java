@@ -74,8 +74,8 @@ public class SeucrityConfig extends WebSecurityConfigurerAdapter {
                // form表单提交的路径
                .loginProcessingUrl("/my")
                //默认为username,可替换为那么
-               .usernameParameter("name")
-               .passwordParameter("pwd")
+               .usernameParameter("username")
+               .passwordParameter("password")
                //登录成功后的跳转路径
                //.defaultSuccessUrl("/PermitAll/succe")
                .successHandler(myAuthenticationSuccessHandler)
