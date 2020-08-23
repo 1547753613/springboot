@@ -5,6 +5,7 @@ import com.aaa.springboothomestay.code.Result;
 import com.aaa.springboothomestay.code.ResultCode;
 import com.aaa.springboothomestay.code.ResultUtil;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.AuthenticationException;
@@ -33,7 +34,12 @@ public class MyAuthenticationFailureHandler implements AuthenticationFailureHand
 
         } else if (e instanceof DisabledException) {
             result = ResultUtil.error(ResultCode.ERROR, "账户被禁用，登录失败，请联系管理员!");
-        } else {
+        }
+        else if (e instanceof AuthenticationServiceException){
+            result = ResultUtil.error(ResultCode.ERROR, "验证码不正确");
+
+        }
+        else {
             result = ResultUtil.error(ResultCode.ERROR, "登录失败:" + e.fillInStackTrace());
         }
         out.write(JSONObject.toJSONString(result));
