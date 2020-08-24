@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <title>个人信息</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/cityLayout.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/lq.datetimepick.css"/>
+
+
+
+    <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<section class="headerwrap headerwrap2">
+    <header>
+        <div  class="header2 header">
+            <div class="top">
+                <div class="wp">
+                    <div class="personal">
+                        <dl class="user fr">
+                            <dd>bobby<img class="down fr" src="/assets/images/top_down.png"/></dd>
+                            <dt><img width="20" height="20" src="/assets/images/default_big_14.png"/></dt>
+                        </dl>
+                        <div class="userdetail">
+                            <dl>
+                                <dt><img width="80" height="80" src="/assets/images/default_big_14.png"/></dt>
+                                <dd>
+                                    <h2>django</h2>
+                                    <p>bobby</p>
+                                </dd>
+                            </dl>
+                            <div class="btn">
+                                <a class="personcenter fl" href="usercenter-info.html">进入个人中心</a>
+                                <a class="fr" href="/logout/">退出</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="usercenter-message.html">
+                        <div class="msg-num"><span id="MsgNum">0</span></div>
+                    </a>
+
+
+                </div>
+            </div>
+
+            <div class="middle">
+                <div class="wp">
+                    <a href="/"><img class="fl" src="/assets/images/logo2.png"/></a>
+                    <h1>我的慕学网</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+</section>
+
+
+
+<!--crumbs start-->
+
+<section>
+    <div class="wp">
+        <ul  class="crumbs">
+            <li><a href="index.html">首页</a>></li>
+            <li><a href="/user/home/">个人中心</a>></li>
+            <li>我的订单</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <div class="wp list personal_list">
+        <div class="left">
+            <ul>
+                <li class="active2"><a href="/user/listuser">个人资料</a></li>
+                <li ><a href="/ygm">我的课程</a></li>
+                <li ><a href="/listuc">我的收藏</a></li>
+                <li >
+                    <a href="/listo">
+                        我的订单
+                    </a>
+                </li>
+                <li th:if="${session.user.is_teacher} == 0"><a href="/teacher/listTeacher">讲师申请</a></li>
+                <li th:if="${session.user.is_teacher} == 1"><a href="/muke/getVadio2">上传课程</a></li>
+                <li th:if="${session.user.is_teacher} == 1"><a href="/muke/listvadio">上传视频</a></li>
+            </ul>
+        </div>
+
+
+        <div class="right" >
+            <div class="personal_des Releasecont">
+                <div class="head">
+                    <h1>我的订单</h1>
+                </div>
+            </div>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150">
+                    <col width="200">
+                    <col>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>订单编号</th>
+                    <th>房屋名称</th>
+                    <th>购买用户</th>
+                    <th>订单总金额</th>
+                    <th>订单状态</th>
+                    <th>订单创建时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="o : ${orders}">
+                    <td th:text="${o.orders_name}"></td>
+                    <td th:text="${o.orders_status}==1?'已付款':'未付款'"></td>
+                    <td th:text="${o.orders_money}"></td>
+                    <td th:text="${o.user_name}"></td>
+                    <td th:text="${o.vadio_name}"></td>
+                    <td th:text="${o.orders_orderScore} == 0?0:${o.orders_orderScore} "></td>
+                    <td width="150px;" th:if="${o.orders_status} == 0">
+                        <button type="button" class="layui-btn" >
+                            <a th:href="'/alipay?order_id='+${o.orders_id}+'&vadio_id='+${o.vadio_id}+'&totalMoney='+${o.orders_money}">付款</a>
+                        </button>
+
+                        <button type="button" class="layui-btn">
+                            <a th:href="'/delOrders?orders_id='+${o.orders_id}">删除</a>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script>
+
+</script>
+</body>
+</html>
