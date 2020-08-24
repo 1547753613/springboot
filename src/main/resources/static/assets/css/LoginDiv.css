@@ -1,0 +1,335 @@
+      .newa_login_bg {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #000;
+            opacity: 0.36;
+            filter: alpha(opacity=36);
+            z-index:9999;
+        }
+
+        .newa_login_main {
+            z-index: 9999;
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: .2s cubic-bezier(0, 0.56, 0.14, 1.33);
+            -moz-transition: .2s cubic-bezier(0, 0.56, 0.14, 1.33);
+            -ms-transition: .2s cubic-bezier(0, 0.56, 0.14, 1.33);
+            -o-transition: .2s cubic-bezier(0, 0.56, 0.14, 1.33);
+            transition: .2s cubic-bezier(0, 0.56, 0.14, 1.33);
+            -webkit-transform: scaleY(0.5) scaleX(0.5);
+            -moz-transform: scaleY(0.5) scaleX(0.5);
+            ;
+            -ms-transform: scaleY(0.5) scaleX(0.5);
+            ;
+            -o-transform: scaleY(0.5) scaleX(0.5);
+            ;
+            transform: scaleY(0.5) scaleX(0.5);
+            ;
+            font-size: 14px;
+            position: fixed;
+            background: #fff;
+            width: 280px;
+            padding: 0 50px 16px;
+            top: 50%;
+            left: 50%;
+            margin-left: -190px;
+            margin-top: -219px;
+            border-radius: 3px;
+            box-shadow: 0 0 8px 1px rgba(0,0,0,.24);
+        }
+
+        .newa_login_pop {
+            visibility: visible;
+            opacity: 1;
+            -webkit-transform: scaleY(1) scaleX(1);
+            -moz-transform: scaleY(1) scaleX(1);
+            -ms-transform: scaleY(1) scaleX(1);
+            -o-transform: scaleY(1) scaleX(1);
+            transform: scaleY(1) scaleX(1);
+        }
+
+        .newa_close {
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: url("../images/newa_close.png") no-repeat;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+
+        .newa_login_tab {
+            width: 220px;
+            margin: 29px auto 37px;
+            height: 32px;
+        }
+
+            .newa_login_tab li {
+                line-height: 30px;
+                width: 110px;
+                float: left;
+                font-size: 18px;
+                color: #777;
+                text-align: center;
+                cursor: pointer;
+            }
+
+        .newa_login_t_active span {
+            display: inline-block;
+            width: 73px;
+            border-bottom: 2px solid #ff9180;
+        }
+
+        .newa_login_con {
+            display: none;
+            width: 280px;
+        }
+
+        .newa_login_input li {
+            position: relative;
+            margin-bottom: 18px;
+        }
+
+        .newa_login_input input {
+            width: 245px;
+            height: 40px;
+            font-size: 14px;
+            padding-left: 35px;
+            border: 1px solid #eeeeee;
+        }
+
+        .newa_login_input li i {
+            position: absolute;
+            display: inline-block;
+            width: 13px;
+            height: 17px;
+            top: 14px;
+            left: 9px;
+        }
+
+        .newa_email_tel_icon {
+            background: url("../images/login_icon.png") no-repeat 0 -53px;
+        }
+
+        .newa_l_password_icon {
+            background: url("../images/login_icon.png") no-repeat -18px -53px;
+        }
+
+        .newa_login_input li i.newa_kj_icon {
+            background: url("../images/login_icon.png") no-repeat 0 -74px;
+            width: 14px;
+            height: 18px;
+        }
+
+        .newa_login_input li i.newa_piccode_icon {
+            background: url("../images/login_icon.png") no-repeat 0 -97px;
+            top: 15px;
+            width: 17px;
+            height: 14px;
+        }
+
+        .newa_login_input li i.newa_code_icon {
+            background: url("../images/login_icon.png") no-repeat 0 -116px;
+            top: 15px;
+            width: 16px;
+            height: 14px;
+        }
+
+        .newa_foget {
+            height: 14px;
+            line-height: 14px;
+            margin-bottom: 28px;
+        }
+
+            .newa_foget label {
+                color: #999999;
+                font-size: 14px;
+            }
+
+        .newa_foget_m {
+            float: right;
+            color: #ff9180;
+            font-size: 14px;
+        }
+
+        .newa_login_btn {
+            display: block;
+            width: 310px;
+            height: 70px;
+            background: url("../images/login_btn.png") no-repeat;
+            margin-left: -15px;
+        }
+
+            .newa_login_btn:hover {
+                background: url("../images/login_btn.png") no-repeat -310px 0;
+            }
+
+        .newa_zc {
+            color: #999;
+            margin-top: -6px;
+        }
+
+            .newa_zc a {
+                color: #fe7e71;
+            }
+
+                .newa_zc a:hover {
+                    text-decoration: underline;
+                }
+
+        .newa_coop {
+            margin-top: 28px;
+        }
+
+            .newa_coop a {
+                display: inline-block;
+            }
+
+            .newa_coop .newa_sina {
+                width: 28px;
+                height: 23px;
+                background: url("../images/login_icon.png") no-repeat 0 -25px;
+            }
+
+            .newa_coop .newa_qq {
+                width: 18px;
+                height: 20px;
+                background: url("../images/login_icon.png") no-repeat -1px 0;
+                margin-left: 25px;
+            }
+
+        .newa_piccode {
+            display: block;
+            width: 80px;
+            height: 36px;
+            position: absolute;
+            right: 0px;
+            top: 2px;
+        }
+
+        .newa_code {
+            display: block;
+            height: 40px;
+            line-height: 44px;
+            color: #fe7e71;
+            padding: 0 10px;
+            position: absolute;
+            right: 0px;
+            top: 0;
+        }
+
+        .newa_tips {
+            visibility: hidden;
+            border: 1px solid #ccc;
+            background: #fff;
+            opacity: 0;
+            -webkit-transform: translateY(10px);
+            -moz-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            -o-transform: translateY(10px);
+            transform: translateY(10px);
+            -webkit-transition: transform .1s ease-in;
+            -moz-transition: transform .1s ease-in;
+            -ms-transition: transform .1s ease-in;
+            -o-transition: transform .1s ease-in;
+            transition: transform .1s ease-in;
+            -webkit-box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
+            line-height: 20px;
+            padding: 4px 14px;
+            display: inline-block;
+            font-size: 12px;
+            color: #999999;
+            position: absolute;
+            left: 50%;
+            top: 58px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+            .newa_tips .newa_tips_icon {
+                margin-right: 10px;
+                font-style: normal;
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                font-size: 12px;
+                background: #fe7e71;
+                color: #fff;
+                text-align: center;
+                line-height: 14px;
+                -webkit-border-radius: 7px;
+                -moz-border-radius: 7px;
+                border-radius: 7px;
+            }
+
+        .newa_trans {
+            -webkit-transition: .1s ease-in;
+            -moz-transition: .1s ease-in;
+            -ms-transition: .1s ease-in;
+            -o-transition: .1s ease-in;
+            transition: .1s ease-in;
+        }
+
+        .newa_tips_show {
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .newa_close_tips {
+            margin-left: 14px;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+            .newa_close_tips:hover {
+                color: #fe7e71;
+            }
+
+        .newa_triangle {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            margin-left: -7px;
+            right: auto;
+            height: 14px;
+            display: inline-block;
+            font-size: 0;
+        }
+
+            .newa_triangle i, .newa_triangle em {
+                overflow: hidden;
+                vertical-align: top;
+                width: 0;
+                height: 0;
+                overflow: hidden;
+                font-size: 0;
+                line-height: 0;
+                border: 7px solid;
+                display: inline-block;
+            }
+
+            .newa_triangle i {
+                border-color: #ccc transparent transparent transparent;
+            }
+
+            .newa_triangle em {
+                border-color: #fff transparent transparent transparent;
+                margin: -1px 0 0 -14px;
+            }
+
+        .newa_piccode img {
+            width: 80px;
+            height: 36px;
+        }
