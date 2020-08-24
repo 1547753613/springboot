@@ -111,7 +111,7 @@ public class SeucrityConfig extends WebSecurityConfigurerAdapter {
                //设置请求路径
                .authorizeRequests()
                //表示该请求任何人都可以访问
-               .antMatchers("/","/index.html","/static/**","/**.ico","/**.js","/**.svg","/createImageCode")
+               .antMatchers("/muniao/**","/","/**.html","/**.css","/static/**","/**.ico","/**.js","/**.svg","/createImageCode","/**.png","/**.jpg","/templates/**","/qiantai/")
                .permitAll()
 
                //表示其他任意请求都要验证
@@ -138,10 +138,9 @@ public class SeucrityConfig extends WebSecurityConfigurerAdapter {
 
      http.exceptionHandling().accessDeniedHandler(myAccessDeniedHandler); // 无权访问
 
-
     }
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/css/**", "/js/**", "/index.html", "/img/**", "/fonts/**", "/favicon.ico", "/verifyCode");
+        web.ignoring().antMatchers("/assets/**","/**/*.js","/**/*.css","/css/**", "/js/**","/images/**", "/index.html","/qiantai/**", "/img/**", "/fonts/**", "/favicon.ico", "/verifyCode");
     }
 }
