@@ -1,7 +1,6 @@
 package com.aaa.springboothomestay.entity;
 
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;

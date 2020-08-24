@@ -16,6 +16,4 @@ public class Role {
     @Column
     private  String role;//	角色名称
 
-    @Column
-    private Integer did;//外键部门
 }
